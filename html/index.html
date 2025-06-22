@@ -1,87 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Binay Chettri</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: rgb(255, 222, 196);
-      text-align: center;
-    }
-
-    nav {
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: rgb(0, 255, 187);
-      font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      display: none;
-      margin-top: 30px;
-    }
-
-    section h3 {
-      margin-bottom: 10px;
-    }
-
-    /* Show the default section */
-    #information {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biodata - Binay Chettri</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <nav>
+        <a onclick="showSection('school')">School</a>
+        <a onclick="showSection('biodata')" class="selected">Biodata</a>
+        <a onclick="showSection('contact')">Contact</a>
+        <a onclick="showSection('other')">Other Info</a>
+        <a onclick="showSection('wanted')">Wanted</a>
+    </nav>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <a onclick="showSection('information')">Information</a>
-    <a onclick="showSection('contact')">Contact</a>
-    <a onclick="showSection('Education')">Education</a>
-  </nav>
+    <section id="biodata" class="active">
+        <center>
+            <h1>Bio Data of Binay Chettri</h1>
+            <p><strong>Name:</strong> Binay Chettri</p>
+            <p><strong>Age:</strong> 18</p>
+            <p><strong>Address:</strong> Butwal, Nepal</p>
+        </center>
+    </section>
 
-  <!-- Sections -->
-  <section id="information">
-    <h3>Information</h3>
-    <p><strong>Name:</strong> Binay Chettri</p>
-    <p><strong>Date of Birth:</strong> July 12, 2010</p>
-    <p><strong>Skills:</strong> Website Design, Python, C#, Robotics</p>
-  </section>
+    <section id="contact">
+        <center>
+            <h2>Contact Details</h2>
+            <p><strong>Phone:</strong> 9876543210</p>
+            <p><strong>Email:</strong> binay@example.com</p>
+            <p>If you want to message me, enter your name and email ID:</p>
+            <input type="text" id="userName" placeholder="Enter your name" /><br />
+            <input type="email" id="userEmail" placeholder="Enter your email" /><br />
+            <button onclick="submitForm()">Submit</button>
+            <p id="response"></p>
+        </center>
+    </section>
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p><strong>Email:</strong> binay.chettri@example.com</p>
-    <p><strong>Phone:</strong> +977-1234567890</p>
-    <p><strong>Location:</strong> Pokhara, Nepal</p>
-  </section>
+    <section id="other">
+        <center>
+            <h2>Other Information</h2>
+            <p><strong>Hobbies:</strong> Football, Coding</p>
+            <p><strong>Skills:</strong> HTML, C#, Python (beginner)</p>
+        </center>
+    </section>
 
-  <section id="Education">
-    <h3>Education</h3>
-    <p>Hello, I study at Siddhi Vinay Secondary School.</p>
-  </section>
+    <section id="school">
+        <center>
+            <h2>Read on Butwal-15 Mainapur</h2>
+            <h3>Siddhi Vinayak Secondary School</h3>
+            <h3>Reading at Siddhi Vinayak Secondary School for IT</h3>
+        </center>
+    </section>
 
-  <!-- JavaScript to control section display -->
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(section => {
-        section.style.display = (section.id === id) ? "block" : "none";
-      });
-    }
-  </script>
+    <section id="wanted">
+        <center>
+            <h1>Sugam Bhandary (Madara Uchiha)</h1>
+            <h2>Most Wanted</h2>
+            <p>Wanted prize: $100,000</p>
+            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/madara-uchiha-naruto-featured.jpg" alt="Madara Uchiha" height="200"/>
 
+            <h1>Ronit Chalise (Quiet Echo Zenronit)</h1>
+            <h2>Most Wanted</h2>
+            <p>Wanted</p>
+            <img src="assets/ronit.jpg" alt="Ronit Chalise" height="200" />
+            <!-- Put your local image in assets folder -->
+        </center>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
